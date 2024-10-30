@@ -1,0 +1,15 @@
+data_path: "data"
+model_path: "model"
+output_path: "output"
+label_list: ["positive", "negative", "neutral"]
+label_dict: {"positive": 0, "negative": 1, "neutral": 2}
+sentiment_type: ['all', 'explicits', 'implicits']
+api_key_dict: {
+  "moonshot-v1-8k": "sk-vcqUlecm5zTpg1N4BWVBlLw3FKW5KzlvAsAuHt225zzS6V1Z", 
+  "glm-4": "013b03f75c20632d7188630e2fcad08c.VB00O7KcrwyKd14T"
+  }
+
+base_url_dict: {
+  "moonshot-v1-8k": "https://api.moonshot.cn/v1",
+  "glm-4": "https://open.bigmodel.cn/api/paas/v4/"
+  }

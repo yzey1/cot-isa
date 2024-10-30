@@ -1,0 +1,12 @@
+works well, and i am extremely happy to be back to an apple os.	Works	positive	0
+Given the sentence "works well, and i am extremely happy to be back to an apple os.", which specific aspect of Works is possibly mentioned? Answer without explanation.
+The operation of a Mac or MacBook computer.
+Given the sentence "works well, and i am extremely happy to be back to an apple os.",  The mentioned aspect is about The operation of a Mac or MacBook computer.. Based on the common sense, what is the implicit opinion towards the mentioned aspect of Works, and why? Answer without explanation.
+The implicit opinion is Positive.   Because the word "well" has a positive connotation and the person expresses extreme happiness with it.
+Given the sentence "works well, and i am extremely happy to be back to an apple os.",  The mentioned aspect is about The operation of a Mac or MacBook computer.. The opinion towards the mentioned aspect of Works is The implicit opinion is Positive.   Because the word "well" has a positive connotation and the person expresses extreme happiness with it.. Based on such opinion, what is the sentiment polarity towards Works? Answer without explanation.
+Positive Sentiment Polarity (100% Positive)
+Given the sentence "works well, and i am extremely happy to be back to an apple os.",  The mentioned aspect is about The operation of a Mac or MacBook computer.. The opinion towards the mentioned aspect of Works is The implicit opinion is Positive.   Because the word "well" has a positive connotation and the person expresses extreme happiness with it.. The sentiment polarity is Positive Sentiment Polarity (100% Positive). Based on these contexts, summarize and return the sentiment polarity only, such as positive, neutral, or negative.
+positive
+gold: positive	predicted: positive
+
+

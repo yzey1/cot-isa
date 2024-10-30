@@ -1,0 +1,4 @@
+Accuracy: 0.7009, F1: 0.4843
+Accuracy (explicit): 0.8187, F1 (explicit): 0.5159
+Accuracy (implicit): 0.3485, F1 (implicit): 0.3374
+Error rows: [825]

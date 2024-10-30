@@ -1,0 +1,3 @@
+Accuracy: 0.618, F1: 0.454
+Accuracy (explicit only): 0.712, F1 (explicit only): 0.483
+Accuracy (implicit only): 0.337, F1 (implicit only): 0.322
