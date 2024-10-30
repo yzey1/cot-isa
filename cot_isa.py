@@ -2,13 +2,13 @@ import argparse
 import os
 import yaml
 import time
-from inference import direct_inference, cot_inference
+from inference import direct_inference, cot_inference, cot_fewshot_inference
 from utils import get_data, evaluate_result
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("-i", "--infer_type", type=str, default="cot", choices=['direct', 'cot'], help="Inference type: direct or cot")
+    parser.add_argument("-i", "--infer_type", type=str, default="cot", choices=['direct', 'cot', 'cot_fewshot'], help="Inference type: direct or cot")
     parser.add_argument("-m", "--model_name", type=str, default="llama3.2", help="Model name")
     parser.add_argument("-d", "--data_fname", type=str, default="Implicit_Labeled_data_for_test.csv", help="Data file name")
 
@@ -40,6 +40,8 @@ if __name__ == '__main__':
                 reasoning_text, pred = direct_inference(row['sentence'], row['target'], model_name)
             elif infer_type == "cot":
                 reasoning_text, pred = cot_inference(row['sentence'], row['target'], model_name)
+            elif infer_type == "cot_fewshot":
+                reasoning_text, pred = cot_fewshot_inference(row['sentence'], row['target'], model_name)
         except Exception as e:
             print(f"Error in row {i}: {e}")
             error_rows.append(i)

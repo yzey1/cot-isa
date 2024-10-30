@@ -85,3 +85,27 @@ def cot_inference(text, target, model_name):
     
     return conversation, output
     
+
+def cot_fewshot_inference(text, target, model_name):
+    
+    conversation = [{'role': 'system', "content": templates.system_prompt}]
+    
+    # step 1: aspect inferring
+    context_step1, prompt_step1 = templates.prompt_for_aspect_few_shot(text, target)
+    conversation, aspect_expr = get_llm_response(conversation, prompt_step1, model_name)
+
+    # step 2: opinion inferring
+    context_step2, prompt_step2 = templates.prompt_for_opinion_few_shot(context_step1, target, aspect_expr)
+    conversation, opinion_expr = get_llm_response(conversation, prompt_step2, model_name)
+
+    # step 3: polarity inferring
+    context_step3, prompt_step3 = templates.prompt_for_polarity(context_step2, target, opinion_expr)
+    conversation, output_lb = get_llm_response(conversation, prompt_step3, model_name)
+    
+    # get the output label
+    output_lb = output_lb.lower().strip()
+    output = 2
+    for k, lb in enumerate(label_list):
+        if lb in output_lb: output = k; break
+    
+    return conversation, output
