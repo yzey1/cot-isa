@@ -5,14 +5,6 @@ import time
 from inference import direct_inference, cot_inference
 from utils import get_data, evaluate_result
 
-# config
-
-# model_path = config['model_path']
-# output_path = config['output_path']
-# label_list = config['label_list']
-# label_dict = config['label_dict']
-# sentiment_type = config['sentiment_type']
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -38,7 +30,7 @@ if __name__ == '__main__':
     
     # inference
     print("Start inference...")
-    
+    start_t = time.time()
     preds = []
     reasoning_texts = []
     error_rows = []
@@ -56,7 +48,7 @@ if __name__ == '__main__':
         reasoning_texts.append(reasoning_text)
         
         if i % (data.shape[0] // 10) == 0:
-            print(f"Inference in progress: {i} rows done.({i/data.shape[0]*100:.2f}%)")
+            print(f"Inference in progress: {i} rows done.({i/data.shape[0]*100:.2f}%), time elapsed: {time.time()-start_t:.2f}s")
     
     print("Inference done.")
     
